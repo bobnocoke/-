@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生产资料处理工具 - 下载</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义主题 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e88e5',
+                        secondary: '#1565c0',
+                        accent: '#ffc107',
+                        dark: '#333333',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-transform {
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 300ms;
+            }
+            .hover-lift {
+                @apply hover:-translate-y-1 transition-all duration-300;
+            }
+            .card-shadow {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-light to-blue-50 min-h-screen font-sans text-dark">
+    <!-- 导航栏 -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-cogs text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold text-primary">生产资料处理工具</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-primary transition-colors">功能特点</a>
+                <a href="#download" class="text-gray-600 hover:text-primary transition-colors">立即下载</a>
+                <a href="#guide" class="text-gray-600 hover:text-primary transition-colors">使用指南</a>
+                <a href="#faq" class="text-gray-600 hover:text-primary transition-colors">常见问题</a>
+            </nav>
+            <button class="md:hidden text-gray-600 hover:text-primary">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 pt-28 pb-16">
+        <!-- 英雄区域 -->
+        <section class="text-center mb-20">
+            <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark mb-6 leading-tight text-shadow">
+                生产资料表格自动生成工具
+            </h2>
+            <p class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto mb-10">
+                高效处理生产数据，自动生成规范表格，提升工作效率，减少人工错误
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#download" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 hover-lift">
+                    <i class="fa fa-download"></i>
+                    <span>立即下载</span>
+                </a>
+                <a href="#guide" class="bg-white hover:bg-gray-50 text-primary border border-primary font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 hover-lift">
+                    <i class="fa fa-book"></i>
+                    <span>使用指南</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 功能特点 -->
+        <section id="features" class="mb-20">
+            <h3 class="text-3xl font-bold text-center mb-16">功能特点</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all card-shadow hover-lift">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-table text-primary text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">自动表格生成</h4>
+                    <p class="text-gray-600">快速处理UPC数据，自动生成符合规范的生产资料表格，减少手动制作时间。</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all card-shadow hover-lift">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-calculator text-primary text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">智能数据计算</h4>
+                    <p class="text-gray-600">自动计算合计数据，按国家、尺码等维度汇总统计，确保数据准确性。</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all card-shadow hover-lift">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-file-excel-o text-primary text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Excel格式兼容</h4>
+                    <p class="text-gray-600">生成标准Excel文件，完美兼容各类办公软件，支持复杂格式和边框设置。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 下载区域 -->
+        <section id="download" class="mb-20 bg-white rounded-2xl p-8 md:p-12 shadow-xl">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="relative w-48 h-48 md:w-64 md:h-64">
+                        <div class="absolute inset-0 bg-primary/10 rounded-3xl rotate-3"></div>
+                        <div class="absolute inset-0 bg-primary/20 rounded-3xl -rotate-3 flex items-center justify-center">
+                            <i class="fa fa-windows text-primary text-6xl md:text-8xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-2/3">
+                    <h3 class="text-3xl font-bold mb-4">生产资料处理工具 v1.0.0</h3>
+                    <p class="text-gray-600 mb-6">适用于Windows系统的桌面应用程序，无需安装Python环境，下载后即可使用。</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i class="fa fa-check-circle text-green-500"></i>
+                            <span>文件大小: 58.2 MB</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa fa-check-circle text-green-500"></i>
+                            <span>最后更新: 2023-10-15</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa fa-check-circle text-green-500"></i>
+                            <span>支持系统: Windows 10/11 (32/64位)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa fa-check-circle text-green-500"></i>
+                            <span>MD5校验: 7a3c8d2e9f1b4567890a2b3c4d5e6f7g</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/downloads/生产资料处理工具.exe" class="inline-flex items-center gap-3 bg-primary hover:bg-secondary text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:shadow-xl transition-all hover-lift text-lg">
+                        <i class="fa fa-download text-xl"></i>
+                        <span>下载EXE文件</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用指南 -->
+        <section id="guide" class="mb-20">
+            <h3 class="text-3xl font-bold text-center mb-16">使用指南</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 bg-blue-50 flex items-center justify-center">
+                        <i class="fa fa-file-excel-o text-primary text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3">步骤1: 准备数据文件</h4>
+                        <p class="text-gray-600 mb-4">确保您的UPC数据文件是Excel格式(.xlsx或.xls)，并包含所需的所有列信息。</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>包含Customer、Stuffing Code等必要字段</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>确保数据格式正确，无空值或错误</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 bg-blue-50 flex items-center justify-center">
+                        <i class="fa fa-cogs text-primary text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3">步骤2: 运行程序</h4>
+                        <p class="text-gray-600 mb-4">双击下载的EXE文件启动程序，无需安装，直接运行。</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>首次运行可能需要确认安全提示</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>程序会自动检查并安装所需依赖</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 bg-blue-50 flex items-center justify-center">
+                        <i class="fa fa-search text-primary text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3">步骤3: 选择文件</h4>
+                        <p class="text-gray-600 mb-4">在程序界面中点击"浏览"按钮，选择您准备好的UPC数据文件。</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>程序会自动解析并验证文件内容</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>显示文件信息和数据统计结果</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-48 bg-blue-50 flex items-center justify-center">
+                        <i class="fa fa-magic text-primary text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3">步骤4: 生成表格</h4>
+                        <p class="text-gray-600 mb-4">点击"生成表格"按钮，程序将处理数据并生成Excel文件。</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>选择保存位置和文件名</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>生成完成后即可打开使用</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq" class="mb-10">
+            <h3 class="text-3xl font-bold text-center mb-16">常见问题</h3>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <h4 class="text-xl font-bold mb-2 flex items-center gap-3">
+                        <i class="fa fa-question-circle text-primary"></i>
+                        程序运行时提示缺少组件怎么办？
+                    </h4>
+                    <p class="text-gray-600 pl-8">程序会自动检查并安装所需的依赖组件。如果安装失败，请确保您的网络连接正常，或尝试以管理员身份运行程序。</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <h4 class="text-xl font-bold mb-2 flex items-center gap-3">
+                        <i class="fa fa-question-circle text-primary"></i>
+                        支持哪些版本的Excel文件？
+                    </h4>
+                    <p class="text-gray-600 pl-8">程序支持.xlsx和.xls格式的Excel文件。建议使用.xlsx格式以获得最佳兼容性和性能。</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <h4 class="text-xl font-bold mb-2 flex items-center gap-3">
+                        <i class="fa fa-question-circle text-primary"></i>
+                        生成的表格格式不符合要求怎么办？
+                    </h4>
+                    <p class="text-gray-600 pl-8">请检查您的输入数据是否符合规范，特别是格式和字段是否完整。如仍有问题，请联系技术支持获取帮助。</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <h4 class="text-xl font-bold mb-2 flex items-center gap-3">
+                        <i class="fa fa-question-circle text-primary"></i>
+                        如何获取程序的更新版本？
+                    </h4>
+                    <p class="text-gray-600 pl-8">程序会定期检查更新，您也可以访问本页面下载最新版本。建议定期更新以获得最新功能和bug修复。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-3">
+                        <i class="fa fa-cogs text-accent text-xl"></i>
+                        <h2 class="text-lg font-bold">生产资料处理工具</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm">高效处理生产数据，提升工作效率</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-phone"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-question-circle"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">© 2023 生产资料处理工具 版权所有</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-secondary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible hover-lift">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 回到顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+            
+            // 导航栏滚动效果
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 50) {
+                header.classList.add('py-2', 'shadow');
+                header.classList.remove('py-3');
+            } else {
+                header.classList.add('py-3');
+                header.classList.remove('py-2', 'shadow');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
